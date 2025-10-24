@@ -252,6 +252,7 @@ class CashierModel extends Model
                         'ornum' => $ornum,
                         'terminalno' =>  $terminalno,
                         'used' => 0,
+                        'salesinvoice' => 1,
                         'oltrans' => 0,
                         'createddatetime' => CashierModel::getServerDateTime()
                     ]);        
@@ -262,6 +263,7 @@ class CashierModel extends Model
                     ->insert([
                         'ornum' => $ornum,
                         'terminalno' =>  $terminalno,
+                        'salesinvoice' => 1,
                         'used' => 0,
                         'createddatetime' => CashierModel::getServerDateTime()
                     ]);
@@ -276,6 +278,7 @@ class CashierModel extends Model
                     ->insert([
                         'ornum' => $ornum,
                         'terminalno' =>  $terminalno,
+                        'salesinvoice' => 1,
                         'used' => 0,
                         'oltrans' => 0,
                         'createddatetime' => CashierModel::getServerDateTime()
@@ -287,6 +290,7 @@ class CashierModel extends Model
       				->insert([
       					'ornum' => $ornum,
       					'terminalno' =>  $terminalno,
+                        'salesinvoice' => 1,
                         'used' => 0,
   					     'createddatetime' => CashierModel::getServerDateTime()
                     ]);
@@ -333,6 +337,7 @@ class CashierModel extends Model
     {
         $ornum = db::table('orcounter')
             ->where('ornum', $ornumber)
+            ->where('salesinvoice', 1)
             ->first();
 
         if($ornum)

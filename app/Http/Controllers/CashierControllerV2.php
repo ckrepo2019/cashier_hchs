@@ -5537,6 +5537,7 @@ class CashierControllerV2 extends Controller
                   ->insert([
                     'ornum' => $ornum,
                     'terminalno' => $terminalno,
+                    'salesinvoice' => 1,
                     'used' => 1,
                     'createddatetime' => CashierModel::getServerDateTime(),
                     'oltrans' => 0
